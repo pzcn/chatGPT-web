@@ -9,11 +9,11 @@ const createdAt = dayjs().format('YYYY-MM-DD HH:mm:ss')
 const loadding = ref(false)
 const visible = ref(false)
 const summary = ref({} as any)
-const models = ref(['text-davinci-003', 'gpt-3.5-turbo'])
+const models = ref(['gpt-3.5-turbo', 'text-davinci-003'])
 
 const message = ref('')
 const api_key = useStorage('api_key', '')
-const chatModel = useStorage('model', 'text-davinci-003')
+const chatModel = useStorage('model', 'gpt-3.5-turbo')
 const continuously = useStorage('continuously', false)
 const messages = useStorage('messages', [
   {
@@ -88,7 +88,7 @@ onMounted(async () => {
     <header id="header" class="bg-dark-50 text-white h-10 select-none">
       <LoadingOutlined v-if="loadding" class="pl-3 cursor-pointer" />
       <span class="text-size-5 pl-5">chatGPT</span>
-      <span class="pl-3">代码领悟</span>
+      <span class="pl-3">PedroZ</span>
       <a-tooltip>
         <template #title>清除聊天记录</template>
         <a-popconfirm title="确定清除本地所有聊天记录吗?" ok-text="是的" cancel-text="再想想" @confirm="clearMessages">
