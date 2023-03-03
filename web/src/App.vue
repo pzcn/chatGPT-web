@@ -14,7 +14,7 @@ const models = ref(['gpt-3.5-turbo', 'text-davinci-003'])
 const message = ref('')
 const api_key = useStorage('api_key', '')
 const chatModel = useStorage('model', 'gpt-3.5-turbo')
-const continuously = useStorage('continuously', false)
+const continuously = useStorage('continuously', true)
 const messages = useStorage('messages', [
   {
     username: "chatGPT",
